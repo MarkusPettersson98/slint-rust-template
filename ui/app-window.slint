@@ -1,18 +1,14 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+struct Coords {
+    x: int,
+}
 
 export component AppWindow inherits Window {
-    in-out property <int> counter: 42;
-    callback request-increase-value();
-    VerticalBox {
-        Text {
-            text: "Counter: \{root.counter}";
+    function trigger() -> Coords {
+        if false {
+            return { };
         }
-
-        Button {
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
-            }
-        }
+        { x: 42 }
+        // The following works just fine:
+        // return { x: 42 };
     }
 }
